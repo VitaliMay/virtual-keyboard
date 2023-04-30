@@ -106,6 +106,9 @@ text()
 let textInput = document.getElementById("text-input"); // это одно и тоже - переделать не успеваю
 let textarea = document.querySelector('textarea'); // это одно и тоже - переделать не успеваю
 
+let currentText = textarea.value;
+
+
 // let cursorStart = textarea.selectionStart;
 // let cursorEnd = textarea.selectionEnd;
 
@@ -160,9 +163,52 @@ document.querySelectorAll('.keyboard .key').forEach(function (element) {
     if (funcButtonIndexArr.includes(indexFuncButton)){
       console.log(`Начинаются мучения`)
       console.log(`Индекс= ${codeKeyboard.indexOf(code)}`)
-      if(indexFuncButton === 13){
-        console.log(`Началось`)
 
+      if(indexFuncButton === 13){
+        // console.log(`Началось`)
+
+        // console.log(textarea.value)
+        /*
+        let letter = `${String.fromCharCode(abcKeys[codeKeyboard.indexOf(code)])}`;
+        */
+
+        if (cursorStart === 0) cursorStart = 1;
+        textarea.value = textarea.value.slice(0, cursorStart-1) + textarea.value.slice(cursorEnd); //работает но только один раз потом курсор убегает
+
+        textarea.selectionStart = textarea.selectionEnd = cursorEnd - 1 // чтобы курсор не убегал
+        if (textarea.selectionStart < 0 || textarea.selectionEnd < 0) textarea.selectionStart = textarea.selectionEnd = 0;
+        textInput.focus();
+      }
+
+      if(indexFuncButton === 14){
+        // console.log(`И снова Началось`)
+
+        // console.log(textarea.value)
+        /*
+        let letter = `${String.fromCharCode(abcKeys[codeKeyboard.indexOf(code)])}`;
+        */
+
+
+        textarea.value = textarea.value.slice(0, cursorStart) + '  ' + textarea.value.slice(cursorEnd); //работает но только один раз потом курсор убегает
+
+        textarea.selectionStart = textarea.selectionEnd = cursorEnd + 2 // чтобы курсор не убегал
+
+        textInput.focus();
+      }
+      if(indexFuncButton === 40){
+        // console.log(`И снова Началось`)
+
+        // console.log(textarea.value)
+        /*
+        let letter = `${String.fromCharCode(abcKeys[codeKeyboard.indexOf(code)])}`;
+        */
+
+
+        textarea.value = textarea.value.slice(0, cursorStart) + '\n' + textarea.value.slice(cursorEnd); //работает но только один раз потом курсор убегает
+
+        textarea.selectionStart = textarea.selectionEnd = cursorEnd + 2 // чтобы курсор не убегал
+
+        textInput.focus();
       }
 
 
@@ -176,8 +222,13 @@ document.querySelectorAll('.keyboard .key').forEach(function (element) {
 
     /* вводит текст в форму */
 
+   // document.querySelector('.textarea').innerHTML += `${String.fromCharCode(abcKeys[codeKeyboard.indexOf(code)])}`; // работает только до переключения на основную клавиатуру
+   //document.querySelector('.textarea').value += `${String.fromCharCode(abcKeys[codeKeyboard.indexOf(code)])}`; // работает
+   //document.querySelector('.textarea').value += `${String.fromCharCode(abcKeys[codeKeyboard.indexOf(code)])}`;
+   //textarea.value += `${String.fromCharCode(abcKeys[codeKeyboard.indexOf(code)])}`;
+    //textInput.focus();
 
-    let currentText = textarea.value; // нигде не использую
+    //let currentText = textarea.value; // пока нигде не использую
     let letter = `${String.fromCharCode(abcKeys[codeKeyboard.indexOf(code)])}`;
     //textarea.value += letter;
 
