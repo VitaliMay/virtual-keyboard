@@ -68,3 +68,13 @@
 .active {
   background-color: green;
 }
+
+/* Текст */
+.wrapper-text {
+  border: solid red 2px;
+  padding: 5px;
+  margin: 0 auto 10px;
+  width: 855px;
+  display: flex;
+  justify-content: flex-start;
+}
