@@ -1,0 +1,70 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.title {
+  text-align: center;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: solid 2px black;
+  width: 855px;
+  
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.key {
+  width: 50px;
+  height: 50px;
+  border: solid 1px black;
+  margin: 3px;
+  padding: 3px;
+}
+
+.add-key {
+  width: 106px;
+}
+.tab-key {
+  width: 80px;
+}
+.capslock-key {
+  width: 90px;
+}
+.enter-key {
+  width: 122px;
+}
+
+.slash-key {
+  width: 76px;
+}
+
+.shift-key {
+  width: 134px;
+}
+
+.shift-key--small {
+  width: 78px;
+}
+
+.space-key {
+  width: 275px;
+}
+
+.active {
+  background-color: green;
+}
+
+/* Текст */
+.wrapper-text {
+  border: solid red 2px;
+  padding: 5px;
+  margin: 0 auto 10px;
+  width: 855px;
+  display: flex;
+  justify-content: flex-start;
+}
