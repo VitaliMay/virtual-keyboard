@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+.title {
+  text-align: center;
+}
+
 .keyboard {
   display: flex;
   flex-direction: row;
@@ -23,50 +27,34 @@
 
 .add-key {
   width: 106px;
-  height: 50px;
-  border: solid 1px black;
-  margin: 3px;
-  padding: 3px;
 }
 
 .tab-key {
   width: 80px;
-  height: 50px;
-  border: solid 1px black;
-  margin: 3px;
-  padding: 3px;
+}
+
+.capslock-key {
+  width: 90px;
+}
+
+.enter-key {
+  width: 122px;
 }
 
 .slash-key {
   width: 76px;
-  height: 50px;
-  border: solid 1px black;
-  margin: 3px;
-  padding: 3px;
 }
 
 .shift-key {
   width: 134px;
-  height: 50px;
-  border: solid 1px black;
-  margin: 3px;
-  padding: 3px;
 }
 
 .shift-key--small {
   width: 78px;
-  height: 50px;
-  border: solid 1px black;
-  margin: 3px;
-  padding: 3px;
 }
 
 .space-key {
   width: 275px;
-  height: 50px;
-  border: solid 1px black;
-  margin: 3px;
-  padding: 3px;
 }
 
 .active {
